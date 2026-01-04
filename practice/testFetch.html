@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    <script>
+        fetch("http://localhost:3000/posts", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              userid: 1,
+              title: "Test",
+              body: "I am testing!",
+            }),
+          })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+    </script>
+</body>
+</html>

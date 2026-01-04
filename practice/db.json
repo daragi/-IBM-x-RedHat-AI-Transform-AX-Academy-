@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "title": "another title",
+      "view": 200
+    },
+    {
+      "id": "2bd4",
+      "userid": 1,
+      "title": "Test",
+      "body": "I am testing!"
+    },
+    {
+      "id": "d1b3",
+      "userid": 1,
+      "title": "Test",
+      "body": "I am testing!"
+    },
+    {
+      "id": "7507",
+      "userid": 1,
+      "title": "Test",
+      "body": "I am testing!"
+    }
+  ],
+  "conmment": [
+    {
+      "id": "1",
+      "title": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "title": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

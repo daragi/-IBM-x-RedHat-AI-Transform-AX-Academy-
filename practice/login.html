@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <script type="text/javascript">
+        var httpRequest = null;
+        // XMLHttpRequest 객체 생성 함수
+        function getXMLHttpRequest() {
+            if (window.ActiveXObject) { // for IE
+                var objectNames = ["MSXML2.XMLHTTP.5.0", "MSXML2.XMLHTTP.4.0",
+                    "MSXML2.XMLHTTP.3.0", "MSXML2.XMLHTTP", "Microsoft.XMLHTTP"];
+                for (var i = 0; i < objectNames.length; i++) { 
+                    try {
+                        return new ActiveXObject(objectNames[i]); // 객체 생성 시도
+                    } catch (e) {
+                        // 실패하면 무시하고 다음 객체명으로 시도
+                    }
+                }
+                return null;
+            } else if (window.XMLHttpRequest) { // for nonIE
+                try {
+                    return new XMLHttpRequest();
+                } catch (e) {
+                    return null;
+                }
+            }
+            return null;
+        }
+        // 로그인 버튼 클릭 시 호출되는 함수
+        function submitLogin() {
+            const inputId = document.getElementById("id").value;
+            const inputPwd = document.getElementById("pwd").value;
+
+            httpRequest = getXMLHttpRequest();
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                    const users = JSON.parse(httpRequest.responseText);
+                    // find()는 조건을 만족하는 첫 번째 요소를
+                    const match = users.find(user => user.id === inputId && user.password === inputPwd);
+
+                    if (match) {
+                        alert("로그인 성공!");
+                        document.getElementById("result").innerHTML = httpRequest.responseText;
+                    } else {
+                        alert("로그인 실패: " + httpRequest.status);
+                        document.getElementById("result").innerHTML = "다시 시도해주세요.";
+                    }
+                }
+            };
+            httpRequest.open("GET", "http://localhost:8080/users.json", true);
+            httpRequest.send(null);
+        }
+    </script>
+</head>
+<body>
+    <h2>로그인</h2>
+    <table border="1">
+        <tr>
+            <td>아이디:</td>
+            <td><input type="text" id="id" /></td>
+        </tr>
+        <tr>
+            <td>비밀번호:</td>
+            <td><input type="password" id="pwd" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="로그인" onclick="submitLogin()" />
+                <input type="reset" value="재입력" />
+            </td>
+        </tr>
+    </table>
+    <p id="result">결과 출력 영역</p>
+</body>
+</html>
