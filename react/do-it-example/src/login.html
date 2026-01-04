@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            로그인
+        </title>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+           $(document).ready(function() {
+            $("input").focus(function() {
+                $(this).css("background-color", "yellow");
+            });
+            $(document).ready(function() {
+                $("input").blur(function() {
+                $(this).css("background-color", "white");
+            });
+        });
+            });
+        </script>  
+        
+    </head>
+    <body>
+        <form action="b.jsp" method="get"> 
+            <table border="1">
+                <tr> 
+                    <td>아 이 디:</td>
+                    <td><input type ="text" name="id"></td> 
+
+                </tr>
+                <tr> 
+                    <td>비밀번호:</td>
+                    <td><input type ="text" name="pwd"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <input type ="radio" name="sex" checked>남성
+                    <input type ="radio" name="sex" >여성</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type ="submit" value="로그인">
+                        <input type ="reset" value="재입력">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

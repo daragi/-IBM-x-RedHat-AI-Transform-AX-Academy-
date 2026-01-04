@@ -1,0 +1,270 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-id {
+  color: #abf073;
+}
+
+.App-pwd {
+  color: hsl(303, 83%, 65%);
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 25px 30px;
+  border-radius: 16px;
+  margin-top: 30px;
+  width: 300px;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  background-color: #fff;
+  color: black;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-submit,
+.btn-reset {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit {
+  background-color: #61dafb;
+  color: black;
+}
+
+.btn-submit:hover {
+  background-color: #21a1f1;
+}
+
+.btn-reset {
+  background-color: #f08080;
+  color: black;
+}
+
+.btn-reset:hover {
+  background-color: #e34c4c;
+}
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 25px 30px;
+  border-radius: 16px;
+  width: 300px;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  background-color: #fff;
+  color: black;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-submit,
+.btn-reset {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit {
+  background-color: #61dafb;
+  color: black;
+}
+
+.btn-submit:hover {
+  background-color: #21a1f1;
+}
+
+.btn-reset {
+  background-color: #f08080;
+  color: black;
+}
+
+.btn-reset:hover {
+  background-color: #e34c4c;
+}
+
+/* 리스트 카드 디자인 */
+.list-section {
+  width: 350px;
+  color: white;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.list-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+}
+
+.list-card h3 {
+  margin: 0 0 10px 0;
+}
+
+.list-card p {
+  margin: 4px 0;
+}
+
+.list-card a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.list-card a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  background-color: #282c34;
+  color: white;
+  font-family: sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: flex-start;
+  padding: 40px;
+  gap: 50px;
+  flex-wrap: wrap;
+  background-color: #282c34; /* 어두운 배경 */
+}
+
+.login-box, .list-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 16px;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.login-form input {
+  background-color: white;
+  color: black;
+}
+
+.list-card p, .list-card a {
+  color: white; /* 리스트 텍스트 보이게 */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
