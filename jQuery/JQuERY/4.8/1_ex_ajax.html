@@ -1,0 +1,30 @@
+
+ <html>
+ <head>
+ <script>
+ function getFromServer() {
+ var req;
+ if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+ req= new XMLHttpRequest();
+ }
+ else {// code for IE6, IE5
+ req= new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ req.onreadystatechange= function () { //윈도우 로드 하는 스테이지를 바꿈
+ if (req.readyState== 4 && req.status== 200)  {
+ // readystate == 4 == http/1.0 200 ok => page의 모든 데이터를 전부 받은 상태
+ // status == 200 == http/1.0 200 ok => page를 성공적으로 응답요청에 성공했음 
+ document.getElementById("target").innerHTML= req.responseText;
+ }
+ }
+ req.open("GET", "testfile.txt", true);
+ req.send();
+ }
+ </script>
+ </head>
+  <body>
+    <div id="target" style="width: 300px; height: 60px; border: solid; ">
+    </div>
+    <button type="button" onclick="getFromServer()">GET DATA</button>
+    </body>
+ </html>
