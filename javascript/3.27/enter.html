@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="script01.js">
+        </script>
+        <title>
+            회원가입
+        </title>
+    </head>
+    <body>
+        회원가입
+        <hr>
+        <form action="http://www.naver.com" method="get">
+            <table border="5">
+                <tr>
+                    <td>이    름:</td>
+                    <td><input type ="text" name="irum"></td>
+                </tr>
+                <tr>
+                    <td>아 이 디:</td>
+                    <td><input type ="text" name="id"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호:</td>
+                    <td><input type ="text" name="pwd"></td>
+                </tr>
+                <tr>
+                    <td>전화번호:</td>
+                    <td><input type ="int" name="PhoneNumber"></td>
+                </tr>
+                <tr>
+                    <td>주    소:</td>
+                    <td><input type ="text" name="address"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <input type ="radio" name="sex" checked>남성
+                    <input type ="radio" name="sex" >여성</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <input type ="radio" name="adult" checked>14세 이상
+                    <input type ="radio" name="childhood" >14세 미만</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <input type ="submit" value="회원가입" onclick="document.write('in line code');">
+                    <input type ="reset" value="뒤로가기">
+                    </td>
+            </table>
+        </form>
+            <script>
+                document.write("inner code");
+            </script>
+    </body>
+</html>
+<!-- 인터넷 html table 문서들 참고
+    tr 태그와 td 태그 살펴보기 -->

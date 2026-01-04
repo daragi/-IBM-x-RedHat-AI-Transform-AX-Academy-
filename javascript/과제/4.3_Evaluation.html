@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경마 게임</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            /* 정렬 방향을 세로로 배치 */
+            align-items: center;
+            gap: 10px;
+            /* container 클래스 안의 raceTrack 사이의 간격을 설정 */
+            width: 100%;
+            
+        }
+        .raceTrack {
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            /* container 가 창의 크기와 상관 없이 항상 가로를 100퍼센트로 채움 */
+            height: 60px;
+            background-color: #a3dfa6;
+            position: relative;
+            /* position: relateive는 자기 자신의 위치를 기준(부모)으로 만든다.
+            따라서 뒤따르는 자식들은 부모의 절대적 위치를 따라간다.
+            => position: absolute  */
+            overflow: hidden;
+            /* 말이 결승선에 도착하는 모션을 매끄럽게 하기 위해서 
+            넘치는 부분 = overflow를 숨기도록 하였다. */
+            border-radius: 20px 20px;
+        }
+        .horse {
+            position: absolute;
+            /* 부모인 raceTrack의 위치를 따라간다.*/
+            width: 50px;
+            height: 50px;
+            top: 10px;
+            left: 0;
+        }
+        .trackNumber {
+            position: absolute;
+            /* 부모인 raceTrack의 위치를 따라간다.*/
+            left: 100px;
+            /* 말에 가려지지 않게 왼쪽에서 100px 만큼 이격 */
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.3); 
+            /* 마지막 0.3값은 30%의 불투명도 */
+            font-weight: bold;
+            /* 굵은 글꼴 = bold */
+        }
+        .buttons button{
+            margin-top: 20px;
+            background-color: #a3dfa6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            /* 모서리 각진 정도 */
+        }
+        .finish-line {
+            position: absolute;
+            right: 0px;
+            top: 0;
+            width: 15px;
+            height: 100%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2><strong>경마 게임</strong></h2><hr>
+    <div class="container" id="gameArea"></div>
+    <div class="buttons">
+        <button onclick="startRace()">Start</button>
+        <!-- 버튼 클릭할때 startRace 함수에 할당-->
+        <button onclick="resetRace()">Reset</button>
+        <!-- 버튼 클릭할때 reset 함수에 할당-->
+    </div>
+
+    <script>
+        const gameArea = document.getElementById("gameArea");
+        // gameArea의 id 요소를 불러오고 const에 변수를 할당하여 값을 고정시킴
+        let horses = [];
+        // 말(이미지)을 저장하는 배열
+        let finishgame = [];
+        // 결승선을 통과한 말들의 목록
+        let intervals = [];
+        // setInterval로 만든 타이머를 저장
+        for (let i = 1; i <= 7; i++) {
+        // 1번마 부터 7번마까지 반복을 돌리며 이미지의 번호를 하나씩 증가시켜 이미지를 변화시킴
+            let raceTrack = document.createElement("div");
+        // div에 요소를 추가해서 raceTrack에 할당
+            raceTrack.classList.add("raceTrack");
+        
+
+            let trackNumber = document.createElement("div");
+            trackNumber.classList.add("trackNumber");
+            trackNumber.textContent = i;
+            
+            let horse = document.createElement("img");
+            horse.src = `../media/lama${i}.png`;
+            horse.classList.add("horse");
+            horse.dataset.index = i;
+            
+            let finishLine = document.createElement("div");
+            finishLine.classList.add("finish-line");
+
+            raceTrack.appendChild(trackNumber);
+            raceTrack.appendChild(horse);
+            raceTrack.appendChild(finishLine);
+            gameArea.appendChild(raceTrack);
+            horses.push(horse);
+        }
+
+        function startRace() {
+            finishgame = [];
+            intervals.forEach(clearInterval);
+            intervals = [];
+
+            horses.forEach(horse => {
+                let position = 0;
+                let interval = setInterval(() => {
+                    let speed = Math.random() *2 + Math.random()*4;
+                    position += speed;
+                    if (position >= window.innerWidth - 40) {
+                        position = window.innerWidth - 40;
+                        clearInterval(interval);
+                        finishgame.push(horse.dataset.index);
+                        if (finishgame.length === 1) {
+                            alert(`🏆 1등: 말 ${finishgame[0]}`);
+                        }
+                    }
+                    horse.style.left = position + "px";
+                }, 20);
+                intervals.push(interval);
+            });
+        }
+        
+        function resetRace() {
+            intervals.forEach(clearInterval);
+            intervals  = [];
+            finishgame = [];
+            
+            horses.forEach(horse => {
+                horse.style.left = "0px";
+            });
+        }
+    </script>
+</body>
+</html>

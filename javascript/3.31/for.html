@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+</head>
+<body>
+    <script>
+        let dan, num;
+        for (dan=2; dan<10; dan++){
+            document.write(dan + "단: ");
+            for (num =1; num <10; num++){
+                document.write(dan + "x" + num + "=" + dan * num + " ");
+                
+            }
+        document.write("<hr>");
+        }
+    </script>
+    <script>
+        let dan2, num2;
+        for (dan2=2; dan2<10; dan2++){
+            document.write(dan2 + "단: ");
+            for (num2 =1; num2 <10; num2++){
+                if (num2 == 5) break;
+               document.write(dan2 + "x" + num2 + "=" + dan2 * num2 + " ");
+            }
+        document.write("<hr>");
+        }
+    </script>
+    <script>
+        let dan3, num3;
+        for (dan3=2; dan3<10; dan3++){
+            document.write(dan3 + "단: ");
+            for (num3 =1; num3 <10; num3++){
+                if (num3 == 5) continue;
+               document.write(dan3 + "x" + num3 + "=" + dan3 * num3 + " ");
+            }
+        document.write("<hr>");
+        }
+    </script>
+</body>
+</html>

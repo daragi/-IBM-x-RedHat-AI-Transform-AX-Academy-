@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 wheel 이벤트</title>
+</head>
+<body>
+    <style> body {text-align: center; overflow: hidden;}</style>
+    <h4>마우스 휠을 돌려보세요</h4><hr>
+    <img id="largerImage" src="../media/photo3.png" width="320" height="210">
+    <script>
+        const image=document.getElementById("largerImage");
+        let wb =320, hb =210;
+
+        document.addEventListener('wheel', (event)=>{
+            event.preventDefault();
+            // preventDefalut는 웹 페이지의 기본 동작을 막는 매서드로
+            // 여기서는 기본 동작인 wheel을 막음으로써 스크롤이 움직이지 않음
+            // deltay : 휠을 내릴 때가 음수, 올릴 때 양수로 표현
+        if (event.deltaY < 0) {
+            wb = wb * 1.1;
+            hb = hb * 1.1;
+        } else {
+            wb = wb / 1.1;
+            hb = hb / 1.1;
+        }
+        image.style.width = wb + 'px';
+        image.style.height = hb + 'px';});
+    </script>
+</body>
+</html>

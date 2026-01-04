@@ -1,0 +1,20 @@
+<!--지역변수: 함수 안에서 만들어진 변수, 블록 밖을 벗어나면 기능이 사라짐 -->
+<!-- 전역변수: 함수 밖에서 만들어진 변수 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        let drink = prompt('한 잔 따른다."이거 마시면 사귀는 거다!"');
+        if (drink =="yes") {
+            document.write(`답: ${drink} 오늘부터 1일.`); // ~ ` 백틱을 사용
+        } else {
+            document.write(`답: ${drink} 헤어진다.`)
+        }
+    </script>
+ </body>
+ </html>

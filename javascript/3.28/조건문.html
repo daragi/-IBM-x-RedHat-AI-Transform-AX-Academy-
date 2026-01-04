@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>조건문</title>
+    </head>
+    <body>
+        <!-- 일반적인 조건문 -->
+        <script>
+            let drink = prompt("이거 마시면 사귀는거다!");
+            document.write("술마신다 :" + drink + "<hr>");
+            if (drink == "yes" || "그래") {
+                document.write("오늘부터 1일");
+            } else {
+                 document.write("헤어진다");
+            }
+        </script>
+        <script>
+            // 삼항 연산자 like 리스트 내포
+            drink == "yes" || "그래" ? document.write("오늘부터 1일") 
+                            : document.write("헤어진다");
+        </script>
+    </body>
+</html>

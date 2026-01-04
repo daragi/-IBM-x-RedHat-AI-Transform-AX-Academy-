@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        position: absolute;
+        height: 250px;
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="pic1" src="../media/france1.jpg" style="z-index: 1" />
+    <img
+      id="pic2"
+      src="../media/france2.jpg"
+      style="top: 100px; left: 100px; z-index: 2"
+    />
+    <img
+      id="pic3"
+      src="../media/france.jpg"
+      style="top: 200px; left: 200px; z-index: 3"
+    />
+    <img
+      id="pic4"
+      src="../media/france4.jpg"
+      style="top: 300px; left: 300px; z-index: 2"
+    />
+    <img
+      id="pic5"
+      src="../media/france5.jpg" 
+      style="top: 400px; left: 400px; z-index: 1"
+    />
+
+    <script>
+      let ary = [1, 2, 3, 2, 1];
+      // z-index를 배열로 선언
+      const max1 = Math.max(...ary);
+      // z-index로 만든 배열 중 최댓값을 구합니다.
+      for (let i = 1; i < 6; i++) {
+        // for문을 돌면서 i가 1부터 5까지 1씩 증가
+        const image = document.getElementById(`pic${i}`);
+        // 변수 image에 각 항목의 이미지를 가져옵니다.
+        image.style.originzIndex = image.style.zIndex;
+        // k에 이미지에 해당되는 z=index를 가져옵니다.
+        image.onclick = change1;
+        // 마우스로 클릭하였을 때 change1()함수를 실행합니다.
+        image.onmouseout = change2;
+        // 마우스가 그림 밖으로 나갈 때, change2()함수를 실행합니다.
+      }
+      function change1() {
+        this.style.zIndex = max1 + 1;
+      }
+      // this를 통해서 해당되는 z-index를 배열에서 가장 높은 값에 1을 더한 값으로 대체합니다.
+      function change2(i) {
+        this.style.zIndex = this.style.originzIndex;
+      }
+      // 같은 방법으로 for문에서 저장하였던 초기의 z-index값을 다시 불러옵니다.
+    </script>
+  </body>
+</html>

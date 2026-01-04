@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종합 마우스 이벤트</title>
+    <link rel="stylesheet" href="style_js.css">
+    <style>
+        body {text-align: center;}
+        #rotateImage {transition: transform 50ms;}
+    </style>
+</head>
+<body>
+    <h4>마우스 커서를 버튼 위에 올렸다가 내려보세요</h4><hr>
+    <h4>버튼을 클릭해보세요</h4><hr>
+    <img id="rotateImage" src="../media/button1.png" width="150px">
+    <script>
+        let image = document.getElementById("rotateImage");
+        image.onmouseover = gone;
+        image.onmouseout = back;
+        image.onclick = rotate;
+
+        function gone() {
+            image.src="../media/button2.png";
+        }
+        function back() {
+            image.src="../media/button1.png";
+        }
+        function rotate() {
+            image.src="../media/button3.png";
+        }
+    </script>
+</head>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // window가 상수이기 때문에 const jud를 사용, window는 생략해도됨, 사실 당연히 다들 그렇게 씀
+        const jud = window.confirm("confirm()에서 window.가 생략된 것을 이해했나요?");
+        document.write("전역객체 속성 이해했음:" + jud + "<hr>");
+        document.write("isNaN(1)=" + isNaN(1) + "<hr>");
+        document.write("isNaN('0.5')=" + isNaN('0.5') + "<hr>");
+        document.write("isNaN('str')=" + isNaN('str') + "<hr>");
+        document.write("eval(3 * 4)=" + eval(3*4) + "<hr>");
+        document.write("eval(Math.random())=" + eval(Math.random()) + "<hr>");
+        document.write("eval(Math.floor(5.2))=" + eval(Math.floor(5.2)) + "<hr>");
+    </script>
+</body>
+</html>

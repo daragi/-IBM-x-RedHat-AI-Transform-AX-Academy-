@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="width: 300px; height: 300px; margin: auto"></div>
+    <script>
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        let count = 1;
+        let intervalID = setInterval(changeColor, 250);
+        // 색상 바꾸기, 250ms =0.25초 마다
+        function changeColor() {
+            if (++count >50)
+            clearInterval(intervalID);
+        // 50회가 넘으면 clearInterval로 멈춤
+            for (let k = 0; k<6; k++)
+            color = color + letters[Math.floor(Math.random() * 16)];
+        document.getElementById("box").style.backgroundColor = color;
+        document.getElementById("box").style.borderRadius = `${count}%`;
+        color = "#";
+    }
+    </script>
+</body>
+</html>

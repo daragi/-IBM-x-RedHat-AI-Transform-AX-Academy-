@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load 이벤트</title>
+</head>
+<body>
+    <style>
+        body {text-align: center;}
+        #loadingImage{transition: transform 5s;}
+    </style>
+    <h4>페이지 로딩</h4>
+    <img id="loadingImage" src="../media/photo3.png">
+    <script>
+        const image = document.getElementById("loadingImage");
+        image.addEventListener("load", function() {
+            image.style.transform = "rotate(360deg)"
+        });
+        // beforeunload는 인터넷 창을 빠져나가기 전에 이벤트 발생
+        // unload는 인터넷 창을 빠져나간 후에 이벤트 발생
+        window.addEventListener("beforeunload", function(event) {
+            const message = "변경사항이 저장되지 않을 수 있습니다.";
+            event.returnValue = message;
+            return message;
+        });
+    </script>
+</body>
+</html>

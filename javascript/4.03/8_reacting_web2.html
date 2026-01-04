@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹2</title>
+    <style>
+        .container1 {
+            display: flex;
+            align-items: center;
+        }
+        .container2 {
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+        }
+        .item {
+            height: 30vh;
+            background-color: #fea;
+            border: 2px solid rgb(8, 64, 175);
+            border-radius: 3px;
+            text-align: center;
+            margin: 10px;
+        }
+        .items {
+            background-color: #fea;
+            border: 2px solid rgb(8, 64, 175);
+            border-radius: 3px;
+            text-align: center;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div class="item" style="flex:1">flex: 1 flex: 1</div>
+        <div class="item" style="flex:2">flex: 2</div>
+        <div class="item" style="flex:3">flex: 3</div>
+    </div>
+    <div class="container2">
+        <div class="items" style="flex:4">flex: 4</div>
+        <div class="items" style="flex:5">flex: 5</div>
+        <div class="items" style="flex:6">flex: 6</div>
+    </div>
+</body>
+</html>

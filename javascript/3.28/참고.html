@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본정보 입력</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            margin: 20px;
+        }
+        .container {
+            width: 700px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #888;
+            margin-right: 20px;
+        }
+        .profile-info {
+            font-size: 14px;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .button {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .button:hover {
+            background-color: #e64a19;
+        }
+        .small-button {
+            background-color: #ff9800;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .small-button:hover {
+            background-color: #f57c00;
+        }
+        .gender-group {
+            display: flex;
+            align-items: center;
+        }
+        .gender-group input {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>기본정보</h1>
+    <p class="subtitle">인사담당자가 연락하는 이메일과 휴대폰 번호가 올바르게 입력되어 있는지 확인하세요.</p>
+
+    <div class="profile-section">
+        <div class="profile-img">사진을 등록하세요</div>
+        <div class="profile-info">
+            <p>부드러운 미소가 담긴 사진을 등록해주세요.</p>
+            <p>* 1MB 미만의 jpg, gif 파일만 등록할 수 있습니다.</p>
+            <p>* 등록하신 사진은 100x100 사이즈로 노출됩니다.</p>
+            <button class="button">등록</button>
+            <button class="small-button">삭제</button>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <td><strong>이름</strong></td>
+            <td>김하비</td>
+        </tr>
+        <tr>
+            <td><strong>* 생년월일</strong></td>
+            <td>
+                <input type="text" class="input-field" placeholder="예: 19990113">
+                <select>
+                    <option>양력</option>
+                    <option>음력</option>
+                </select>
+                <div class="gender-group">
+                    <label>남자 <input type="radio" name="gender" checked></label>
+                    <label>여자 <input type="radio" name="gender"></label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>* 휴대폰번호</strong></td>
+            <td>
+                <input type="text" class="input-field" placeholder="01012345678">
+                <button class="small-button">인증</button>
+                <select>
+                    <option>연락가능시간</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>* 이메일</strong></td>
+            <td>
+                <input type="email" class="input-field" placeholder="이메일 입력">
+                <button class="small-button">미인증</button>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>주소</strong></td>
+            <td>
+                <input type="text" class="input-field" placeholder="주소 입력">
+                <button class="small-button">검색</button>
+                <label><input type="checkbox"> 해외거주</label>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>홈페이지/SNS</strong></td>
+            <td>
+                <input type="text" class="input-field" placeholder="주소를 입력하세요">
+            </td>
+        </tr>
+    </table>
+
+    <button class="button" style="margin-top: 20px;">이 부분만 저장</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            margin: 20px;
+        }
+        .container {
+            width: 900px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #888;
+            margin-right: 20px;
+        }
+        .profile-info {
+            font-size: 14px;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td {
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+            padding: 5px; 
+        }
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .button {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .button:hover {
+            background-color: #e64a19;
+        }
+        .small-button {
+            background-color: #ff9800;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .small-button:hover {
+            background-color: #f57c00;
+        }
+        .gender-group {
+            display: flex;
+            align-items: center;
+        }
+        .options-container {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .option {
+            width: 120px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            background: #f8f8f8;
+        }
+        .option:hover {
+            background: #ddd;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>기본정보</h1>
+        <div class="profile-section">
+            <div class="profile-img">사진을 등록하세요</div>
+            <div class="profile-info">
+                <p>* 1MB 미만의 jpg, gif 파일만 등록할 수 있습니다.</p>
+                <p>* 등록하신 사진은 100x100 사이즈로 노출됩니다.</p>
+                <button class="button">등록</button>
+                <button class="button">삭제</button>
+            </div>
+        </div>
+    <table>
+        <tr>
+            <td><strong>* 이름</strong></td>
+            <td><input type ="text" name="irum"></td>
+        </tr>
+        <tr>
+            <td><strong>* 생년월일</strong></td>
+            <td><input type="text" placeholder="예: 19940228"></td>
+            <td>
+                <input type ="radio" name="calendar" checked>양력
+                <input type ="radio" name="calendar" >음력</td>
+            <td>
+                <input type ="radio" name="sex" checked>남자
+                <input type ="radio" name="sex" >여자</td>
+        </tr>
+        <tr>
+            <td><strong>* 휴대폰번호</strong></td>
+            <td>
+                <input type="text" placeholder="예: 01012345678">
+                <button class="small-button">휴대폰인증</button>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>&ensp;이메일</strong></td>
+            <td>
+                <input type="text" name="e-mail">
+                <button class="small-button">이메일인증</button>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>&ensp;주소</strong></td>
+            <td>
+                <input type="text" name="주소">
+                <button class="small-button">검색</button>
+                <input type="checkbox">해외거주
+            </td>
+        </tr>
+    </table>
+    <br>    
+        <h1>학력사항</h1>
+        <table>
+            <tr>
+                <td><strong>구분</strong></td>
+                <td><strong>재학기간</strong></td>
+                <td><strong>학교명</strong></td>
+                <td><strong>전공</strong></td>
+                <td><strong>졸업 여부</strong></td>
+            </tr>
+            <tr>
+                <td>고등학교</td>
+                <td>
+                    <input type="text" placeholder="예: 2015.03 - 2018.02"></td>
+                <td><input type="text" placeholder="학교명을 입력하세요"></td>
+                <td></td>
+                <td>
+                    <select>
+                        <option>선택</option>
+                        <option>졸업</option>
+                        <option>졸업예정</option>
+                        <option>중퇴</option>
+                        <option>수료</option>
+                        <option>재학</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>대학교</td>
+                <td>
+                    <input type="text" placeholder="예: 2018.03 - 2022.02">
+                </td>
+                <td><input type="text" placeholder="학교명을 입력하세요"></td>
+                <td><input type="text" placeholder="전공을 입력하세요"></td>
+                <td>
+                    <select>
+                        <option>선택</option>
+                        <option>졸업</option>
+                        <option>졸업예정</option>
+                        <option>중퇴</option>
+                        <option>수료</option>
+                        <option>재학</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <h1>경력사항</h1>
+        <table>
+            <tr>
+                <td><strong>* 경력여부</strong></td>
+                <td><input type="radio" name="personal history" checked>신입</td>
+                <td><input type="radio" name="personal history">경력</td>
+            </tr>
+        </table>
+        <br>
+        <h1>선택사항</h1>
+        <table>
+            <tr>
+                <td><strong></strong></td>
+                <div class="options-container">
+                    <div class="option" onclick="toggleOption('certificates')">+ 자격증</div>
+                    <div class="option" onclick="toggleOption('computer-skills')">+ 컴퓨터 활용능력</div>
+                    <div class="option" onclick="toggleOption('job-preference')">+ 취업우대사항</div>
+                    <div class="option" onclick="toggleOption('awards')">+ 수상경력</div>
+                    <div class="option" onclick="toggleOption('education')">+ 교육 수료사항</div>
+                    <div class="option" onclick="toggleOption('language-skills')">+ 어학능력</div>
+                    <div class="option" onclick="toggleOption('overseas-experience')">+ 해외연수 및 경험</div>
+                    <div class="option" onclick="toggleOption('volunteer')">+ 봉사활동 및 주요활동</div>
+                    <div class="option" onclick="toggleOption('portfolio')">+ 포트폴리오 및 첨부서류</div>
+                </div>
+            </tr>
+            <tr>
+                <td>* 직무기술</td>
+                <td colspan="9">
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="python">python</label>
+                        <label><input type="checkbox" name="java">Java</label>
+                        <label><input type="checkbox" name="C">C</label>
+                        <label><input type="checkbox" name="C++">C++</label>
+                        <label><input type="checkbox" name="R">R</label>
+                        <label><input type="checkbox" name="C#">C#</label>
+                        <label><input type="checkbox" name="SQL">SQL</label>
+                        <label><input type="checkbox" name="JavaScript" >JavaScript</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>* 선호 근무형태</td>
+                <td colspan="9">
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="계약직">계약직</label>
+                        <label><input type="checkbox" name="정규직">정규직</label>
+                        <label><input type="checkbox" name="인턴">인턴</label>
+                        <label><input type="checkbox" name="프리랜서">프리랜서</label>
+                        <label><input type="checkbox" name="알바">알바</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>* 희망연봉</td>
+                <td colspan="9">
+                    <div class = "checkbox-group">
+                        <label><input type="text" placeholder="예: 3,000만원">이상</label>
+                        <label><input type="checkbox" name="closed">비공개</label>
+                    </div>
+                </td>
+            </tr>
+        </table>
+</body>
+</html>

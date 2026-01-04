@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>논리연산자</title>
+    </head>
+    <body>
+        <script>
+            document.write("true && true:" + (true&&true) + "<hr>");
+            document.write("false && true:" + (false&&true) + "<hr>");
+            document.write("false || true:" + (false||true) + "<hr>");
+            document.write("false || false" + (false||false) + "<hr>");
+            document.write("!true:" + !true + "<hr>");
+            document.write("!false:" + !false +"<hr>" );
+        </script>
+        <script>
+            let opr1, opr2, op;
+            opr1 = parseInt(prompt("첫 번째 숫자를 입력하세요"));
+            opr2 = parseInt(prompt("두 번째 숫자를 입력하세요"));
+            op = prompt("연산자를 입력하세요");
+            document.write("결과는: " + (opr1 + opr2) +"<hr>");
+            document.write("결과는: " + (opr1 - opr2) +"<hr>");
+            document.write("결과는: " + (opr1 * opr2) +"<hr>");
+            document.write("결과는: " + (opr1 / opr2) +"<hr>");
+            document.write("결과는: " + (opr1 % opr2) +"<hr>");
+        </script>
+        <!-- && = and, || = or, ! = not -->
+    </body>
+</html>

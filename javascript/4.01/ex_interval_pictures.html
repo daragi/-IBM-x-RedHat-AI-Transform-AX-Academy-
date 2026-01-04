@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center">
+    <img id="image" src="../media/button1.png"><br>
+    <input type="button" value="Change" onClick="changeImage()">
+    <script>
+        let toggle =1;
+        function changeImage() {
+            if (++toggle % 2 == 0)
+            document.getElementById("image").src="../media/button3.png";
+            else
+            document.getElementById("image").src="../media/button1.png";
+        }
+    </script>
+    
+</body>
+</html>

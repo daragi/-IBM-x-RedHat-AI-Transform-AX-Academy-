@@ -1,0 +1,22 @@
+# internet
+www = web
+https = google.com/search?q= ~~~ - 좀 더 private한 느낌
+http = google.com - 공개적인 느낌
+
+https://(drive.google.com) -> domain name(host name)
+
+상대경로: 다른 데 복사를 할 때 문자가 생긴다.
+절대경로: 상대방의 통신 경로에 문제가 생길 때 문제가 생긴다.
+
+# network
+cmd->ipconfig
+
+ipv4 = 버전4의 ip
+
+#html
+태그 - <body></body> 기반의 언어 = 마크업 언어
+
+#java script
+// 한 줄 주석
+/* 여러 줄
+    주석 */

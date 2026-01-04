@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- id는 요소를 가져오는 태그 및 element의 존재 여부 체크-->
+    <h1 id="alter">Change Colors</h1>
+    <button onclick="change('red')">red</button>
+    <button onclick="change('blue')">blue</button>
+    <button onclick="change('yellow')">yellow</button>
+    <button onclick="change('green')">green</button>
+    <script>
+        function change(colors) {
+            const alter = document.getElementById("alter");
+            alter.style.color = colors;
+            // alter에는 태그가 들어감으로 객체 타입으로 불 수 있음
+        }
+    </script>
+</body>
+</html>
