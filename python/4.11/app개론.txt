@@ -1,0 +1,21 @@
+#app 구동원리
+
+-사람이 컴퓨터 한테 명령하는 것은 기계 언어로 해야함
+-소프트웨어 부분만으로 body가 없기에 하드웨어가 필요 - Machine(CPU) , 그 사이에 운영체재(OS)가 있음
+-근데 os마다 버전이 다르기에 서버를 동기화 시켜야함  (= 타서버와의 통신 , 이기종과의 통신)
+-나는 js 로 했는데 상대는 python이다? 텍스트 통신을 함, 모든 파일의 기본은 hypertext의 기본에서 파생되기 때문에
+-binary to text, (sound,image,video to text) => Sp-to(Speech-to) text = adapter ex)alexa, LG Ai 스피커, IoT
+-h/w(cpu)가 (받는 명령 instruction) -> os (command) ex)dir, ls ->app
+
+*js, py 는 모든 것이 객체 => oop,obl(object based language) 클래스, 인스턴스 , 계승, 캡슐화, 추상화
+
+# 역함수 이야기
+같은 클래스로 만들면 같은 함수를 사용
+
+
+#과제1. iterate, ietrater,iterable 개념 구분해서 알아오기
+ate: 리터레이터 가 된 것
+ter: 리터레이터를 하는 것
+able: 리터레이터가 아직 안 된, 하지만 될 수 있는 것
+
+

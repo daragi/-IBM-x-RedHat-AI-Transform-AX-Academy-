@@ -1,0 +1,8 @@
+-class
+class로 선언한 변수 = type:참조(변수) = > 객체의 틀 = 값
+class => member , interface(클래스의 규칙)
+member => 클래스 내부에 선언된 요소  = 속성(property,field), method
+ex y,m,d = 2025, 4, 16
+method => member중 함수인 것
+ex coundDay(y,m,d)
+
