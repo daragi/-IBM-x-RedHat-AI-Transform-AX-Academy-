@@ -6,6 +6,7 @@ python/.vscode
 react/do-it-example/build
 react/do-it-example/node_modules
 react/do-it-example/src/SQL Commands_files
+*key*
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
